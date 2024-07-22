@@ -40,9 +40,7 @@ public class CrudRepositoryImpl implements CrudRepository {
 			 writer.close();
 		
 		}
-
-		 
-		 
+		
 		
 		
 		return response;
@@ -63,14 +61,12 @@ public class CrudRepositoryImpl implements CrudRepository {
 				System.out.println(line);
 			}
 		} catch ( IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 		
 			try {
 				reader.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
