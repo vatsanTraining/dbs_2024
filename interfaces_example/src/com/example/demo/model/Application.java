@@ -3,6 +3,7 @@
  */
 package com.example.demo.model;
 
+import com.example.demo.exceptions.RangeCheckException;
 import com.example.demo.services.ProductService;
 
 /**
@@ -30,7 +31,9 @@ public class Application {
 			  service.add(tv);
 			  service.add(mobile);
 		
-		} catch (Exception e) {
+		} catch (RangeCheckException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	

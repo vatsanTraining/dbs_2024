@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.example.demo.exceptions.RangeCheckException;
+
 public class Product {
 
 	
@@ -21,7 +23,7 @@ public class Product {
 		this.ratePerUnit = ratePerUnit;
 		
 		} else {
-			throw new Exception("Invalid Rate Per Unit - Should be Positive Number");
+			throw new RangeCheckException("Invalid Rate Per Unit - Should be Positive Number");
 		}
 	}
 
@@ -45,8 +47,17 @@ public class Product {
 		return ratePerUnit;
 	}
 
-	public void setRatePerUnit(double ratePerUnit) {
+	public void setRatePerUnit(double ratePerUnit)  throws Exception{
+		
+		
+		
+		if(ratePerUnit>0) {
+			
 		this.ratePerUnit = ratePerUnit;
+		
+		} else {
+			throw new RangeCheckException("Invalid Rate Per Unit - Should be Positive Number");
+		}
 	}
 
 	@Override
