@@ -44,22 +44,24 @@ public class Application {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	
-		
-		 
-		
-		
-		  
+	  
 		  
 		  List<Product> list =service.findAll();
 		  
 		  
-		  for(Product eachProduct:list) {
-			  
-				  System.out.println(eachProduct);
-			  
-		  }
-		
+//		  for(Product eachProduct:list) {
+//			  
+//				  System.out.println(eachProduct);
+//			  
+//		  }
+//		
+		  
+	//	  list.forEach((e) -> System.out.println(e));
+		  
+		  list.forEach(System.out::println); // method reference means , use println method with each element
+		  
+		  
+		  
 	}
 
 }

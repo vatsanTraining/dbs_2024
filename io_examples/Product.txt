@@ -1,2 +1,6 @@
 101,sony tv,45000.0
 102,one plus,55000.0
+101,sony tv,45000.0
+102,one plus,55000.0
+101,sony tv,45000.0
+102,one plus,55000.0
