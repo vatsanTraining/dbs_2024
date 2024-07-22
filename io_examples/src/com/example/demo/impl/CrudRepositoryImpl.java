@@ -58,9 +58,18 @@ public class CrudRepositoryImpl implements CrudRepository {
 			
 			while((line=reader.readLine())!=null){
 				
-				System.out.println(line);
+				String[] values = line.split(",");
+				
+				Product obj = new Product(Integer.parseInt(values[0]), values[1], Double.parseDouble(values[2]));
+				
+				this.productList.add(obj);
+				
 			}
 		} catch ( IOException e) {
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 		
