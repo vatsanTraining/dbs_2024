@@ -11,11 +11,18 @@ public class Product {
 		super();
 	}
 
-	public Product(int productId, String productName, double ratePerUnit) {
+	public Product(int productId, String productName, double ratePerUnit) throws Exception {
 		super();
 		this.productId = productId;
 		this.productName = productName;
+		
+		if(ratePerUnit>0) {
+			
 		this.ratePerUnit = ratePerUnit;
+		
+		} else {
+			throw new Exception("Invalid Rate Per Unit - Should be Positive Number");
+		}
 	}
 
 	public int getProductId() {
