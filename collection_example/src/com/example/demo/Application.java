@@ -1,13 +1,14 @@
 /**
  * 
  */
-package com.example.demo.model;
+package com.example.demo;
 
 import java.util.List;
 
 import com.example.demo.exceptions.RangeCheckException;
 import com.example.demo.ifaces.CrudRepository;
 import com.example.demo.impl.CrudRepositoryImpl;
+import com.example.demo.model.Product;
 import com.example.demo.services.ProductService;
 
 /**
