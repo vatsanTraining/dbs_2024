@@ -1,6 +1,7 @@
 package com.example.demo.impl;
 
 import java.util.ArrayList;
+import java.sql.*;
 import java.util.List;
 
 import com.example.demo.ifaces.CrudRepository;
@@ -10,78 +11,57 @@ public class CrudRepositoryImpl implements CrudRepository {
 	
 	
 	
-	private List<Product> productList;
-	PrintWriter writer;
-
+	Connection con;
+	
 	
 
-	public CrudRepositoryImpl() throws IOException {
+	public CrudRepositoryImpl(Connection con) throws IOException {
 		super();
-		this.productList = new ArrayList<>();
 		
+		this.con = con;
 		 
 	}
 
 	@Override
 	public boolean add(Product object) {
 
-		 boolean response =false;
-
+			String sql = "insert into product_2024 values(?,?,?)";
+			
+			int rowAdded = 0;
+			try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+				
+				pstmt.setInt(1, object.getProductId());
+				pstmt.setString(2, object.getProductName());
+				pstmt.setDouble(3, object.getRatePerUnit());
+				
+				rowAdded = pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
 		
-		 try {
-			writer =new PrintWriter(new FileWriter(new File("Product.txt"),true));
-			writer.println(object);
-            response=true;
-
-		 } catch (IOException e) {
-			e.printStackTrace();
-		}finally {
-		
-			 writer.close();
-		
+			return rowAdded==1?true:false;
 		}
-		
-		
-		
-		return response;
-	}
 
 	@Override
 	public List<Product> findAll() {
 		
-	
-		BufferedReader reader=null;
-		try {
-			 reader = new BufferedReader(new FileReader(new File("Product.txt")));
-			
-			String line =null;
-			
-			while((line=reader.readLine())!=null){
-				
-				String[] values = line.split(",");
-				
-				Product obj = new Product(Integer.parseInt(values[0]), values[1], Double.parseDouble(values[2]));
-				
-				this.productList.add(obj);
-				
-			}
-		} catch ( IOException e) {
-			e.printStackTrace();
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-		
-			try {
-				reader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		
 		
-		return this.productList;
+		return null;
+	}
+
+	@Override
+	public Product findById(int key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean remove(int key) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
