@@ -3,6 +3,8 @@
  */
 package com.training;
 
+import java.util.ResourceBundle;
+
 import org.training.Greeting;
 
 /**
@@ -18,6 +20,10 @@ public class Application {
 
 		Greeting welcome= new Greeting();
 		
+		
+		
+				
+				
 		// All classes in java extend Object class
 		// so Object class public methods are also accessible to welcome object
 	

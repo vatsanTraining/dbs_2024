@@ -62,8 +62,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return this.productName + this.ratePerUnit;
+		return this.productId+","+this.productName +"," +this.ratePerUnit;
 	}
+
 	
 	
 	
