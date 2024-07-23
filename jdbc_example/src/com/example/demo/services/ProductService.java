@@ -34,4 +34,10 @@ public class ProductService {
 		
 		return this.repo.findAll();
 	}
+	
+public Product findById(int key) {
+		
+		return this.repo.findById(key);
+	}
+	
 }

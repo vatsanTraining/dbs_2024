@@ -61,13 +61,8 @@ public class CrudRepositoryImpl implements CrudRepository {
 			
 			while(rs.next()) {
 		
-				int productId = rs.getInt("product_id");
-				String productName = rs.getString("product_name");
-				double ratePerUnit =rs.getDouble("rate_per_unit");
 				
-				Product obj  = new Product(productId, productName, ratePerUnit);
-				
-				productList.add(obj);
+				productList.add(rowMapper(rs));
 
 			}
 					
@@ -80,12 +75,44 @@ public class CrudRepositoryImpl implements CrudRepository {
 		return productList;
 	}
 
+	private Product rowMapper(ResultSet rs) throws RangeCheckException,SQLException{
+		
+		int productId = rs.getInt("product_id");
+		String productName = rs.getString("product_name");
+		double ratePerUnit =rs.getDouble("rate_per_unit");
+		
+		Product obj  = new Product(productId, productName, ratePerUnit);
+
+		return obj;
+	}
+	
+	
 	@Override
 	public Product findById(int key) {
 		
-		String sql ="";
+		String sql ="select * from  product_2024 where product_id=? ";
 		
 		Product obj = null;
+
+     try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+    	 pstmt.setInt(1, key);
+    	 
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+		
+				
+				obj =rowMapper(rs);
+
+			}
+					
+		} catch (SQLException |RangeCheckException e) {
+			
+			e.printStackTrace();
+		}
+
+		
 		
 		return obj;
 	}

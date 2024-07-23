@@ -31,6 +31,7 @@ public class Application {
 			
 			service.findAll().forEach(System.out::println);
 
+			System.out.println("Found:=>"+service.findById(404));
 			
 			
 		} catch (Exception  e) {
