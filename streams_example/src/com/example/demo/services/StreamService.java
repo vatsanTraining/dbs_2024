@@ -1,6 +1,8 @@
 package com.example.demo.services;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.example.demo.ifaces.CrudRepository;
@@ -36,6 +38,26 @@ public class StreamService {
 		
 	}
 	
+	public Set<String> getProductNames(){
+		
+		
+		return this.list.stream().map(e -> e.getProductName()).collect(Collectors.toSet());
+	}
 	
+	
+	public Map<String,Double> getProductNameWithRpu(double price){
+		
+		
+		return this.list.stream()
+			      .filter(e -> e.getRatePerUnit()>price)
+                  .collect(Collectors.toMap(Product::getProductName, Product::getRatePerUnit));
+	}
+	
+	
+	public double getAverageRpu() {
+		
+		return this.list.stream().mapToDouble(e -> e.getRatePerUnit()).average().getAsDouble();
+		
+	}
 	
 }
