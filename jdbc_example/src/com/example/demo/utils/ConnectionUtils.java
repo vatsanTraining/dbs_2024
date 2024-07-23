@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 public class ConnectionUtils {
 	
 
-	public static Connection getOracleConnection() {
+	public static Connection getMySqlConnection() {
 		
 		Connection con =null;
 		
