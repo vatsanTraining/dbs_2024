@@ -82,8 +82,12 @@ public class CrudRepositoryImpl implements CrudRepository {
 
 	@Override
 	public Product findById(int key) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String sql ="";
+		
+		Product obj = null;
+		
+		return obj;
 	}
 
 	@Override
