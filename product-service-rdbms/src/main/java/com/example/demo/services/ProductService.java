@@ -29,4 +29,36 @@ public class ProductService {
 	}
 	
 	
+	public Product  save(Product obj) {
+		
+		return this.repo.save(obj);
+	}
+	
+	
+	public Product findById(int key) {
+	
+		return this.repo.findById(key).orElseThrow(
+				 () -> new RuntimeException("Product with Given Id Not Found"));
+	}
+	public Product update(Product obj) {
+		
+		return this.repo.save(obj);
+	}
+	
+	public boolean remove(int key) {
+		
+		boolean isDeleted =false;
+		if(this.repo.existsById(key)) {
+			
+			this.repo.deleteById(key);
+			
+			isDeleted = true;
+		}
+		
+		return isDeleted;
+		
+	}
+	
+	
+	
 }
