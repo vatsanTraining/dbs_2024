@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 public class ConnectionUtils {
 	
 
-	public Connection getOracleConnection() {
+	public static Connection getOracleConnection() {
 		
 		Connection con =null;
 		
