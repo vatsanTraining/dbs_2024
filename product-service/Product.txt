@@ -1,2 +1,4 @@
 2030,samsung tv,5600.0
 3030,samsung phone,6600.0
+3030,samsung phone,6600.0
+3030,samsung phone,6600.0

@@ -3,6 +3,7 @@ package com.example.demo.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.ifaces.CrudRepository;
@@ -21,12 +22,13 @@ public class ProductService {
 	// Constructor DI
 
 	@Autowired
-	public ProductService(CrudRepository repo) {
+	public ProductService(@Qualifier("crudRepositoryImpl") CrudRepository repo) {
 		
 		super();
 		
 		this.repo=repo;
 		
+		System.out.println(repo.getClass().getName());
 
 	}
 

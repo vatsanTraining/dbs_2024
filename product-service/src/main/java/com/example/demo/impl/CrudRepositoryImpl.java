@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.ifaces.CrudRepository;
@@ -12,6 +13,7 @@ import java.io.*;
 
 // By Adding this annotation this class will be registered as a bean
 @Repository  
+//@Primary
 public class CrudRepositoryImpl implements CrudRepository {
 	
 	
