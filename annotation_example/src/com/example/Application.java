@@ -13,7 +13,7 @@ public class Application {
 		
 		Book book = new Book();
 		
-		Class cls =book.getClass();
+		Class<?> cls =book.getClass();
 		
 		Table tbl =(Table) cls.getAnnotation(Table.class);
 		
