@@ -14,7 +14,7 @@ import com.example.demo.services.ProductService;
 public class ProductController {
 
 	
-	ProductService  service;
+	private ProductService  service;
 
 	// Constructor DI
 	public ProductController(ProductService service) {
