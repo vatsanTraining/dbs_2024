@@ -18,17 +18,27 @@ public class ProductServiceRdbmsApplication {
 		 ConfigurableApplicationContext ctx=SpringApplication.run(ProductServiceRdbmsApplication.class, args);
 	
 	
-		 ctx.getBean(ProductService.class)
-		      .findAll()
-		       .forEach(System.out::println);
-		 
+	ProductService service 	= ctx.getBean(ProductService.class);
+	
+		      
 		 
 		 Product toAdd = ctx.getBean(Product.class);
 		 
-		 ctx.getBean(ProductService.class).save(toAdd);
+		 service.save(toAdd);
 		 
+		 toAdd.setRatePerUnit(999.99);
 		 
+		 service.update(toAdd);
 		 
+         System.out.println("Is Deleted:=>"+service.remove(103));
+
+         
+     	service.findAll()
+	       .forEach(System.out::println);
+	 
+     	
+     	service.findById(103);
+
 		 
 		 ctx.close();
 	
@@ -41,9 +51,9 @@ public class ProductServiceRdbmsApplication {
 		Product tv = new Product();
 
 		
-			tv.setRatePerUnit(5600.00);
-			tv.setProductId(2030);
-			tv.setProductName("samsung tv");
+			tv.setRatePerUnit(5700.00);
+			tv.setProductId(2032);
+			tv.setProductName("samsung watch");
 
 		
 		return tv;
