@@ -40,4 +40,10 @@ public Product findById(int key) {
 		return this.repo.findById(key);
 	}
 	
+
+public boolean removeById(int key) {
+	
+	return this.repo.remove(key);
+}
+
 }

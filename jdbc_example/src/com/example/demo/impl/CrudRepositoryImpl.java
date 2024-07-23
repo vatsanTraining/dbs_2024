@@ -119,8 +119,25 @@ public class CrudRepositoryImpl implements CrudRepository {
 
 	@Override
 	public boolean remove(int key) {
-		// TODO Auto-generated method stub
-		return false;
+
+		String sql ="delete from  product_2024 where product_id=? ";
+		
+		int rowDeleted =0;
+
+     try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+    	 pstmt.setInt(1, key);
+    	 
+			 rowDeleted = pstmt.executeUpdate();
+			
+								
+		} catch (SQLException  e) {
+			
+			e.printStackTrace();
+		}
+
+		
+		return rowDeleted==1?true:false;
 	}
 
 }

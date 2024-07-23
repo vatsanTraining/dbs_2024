@@ -34,6 +34,8 @@ public class Application {
 			System.out.println("Found:=>"+service.findById(404));
 			
 			
+			System.out.println("Is Deleted:=>"+ service.removeById(404));
+			
 		} catch (Exception  e) {
 			e.printStackTrace();
 		}
