@@ -2,13 +2,16 @@ package com.example.demo.model;
 
 import com.example.demo.exceptions.RangeCheckException;
 
+//1
 public class Product {
 
 	
+	//2
 	private int productId;
 	private String productName;
 	private double ratePerUnit;
 	
+	//3
 	public Product() {
 		super();
 	}
@@ -27,11 +30,12 @@ public class Product {
 		}
 	}
 
+	//4
 	public int getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId( int productId)  { //5
 		this.productId = productId;
 	}
 
