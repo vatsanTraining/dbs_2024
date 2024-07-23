@@ -13,7 +13,7 @@ public class Product {
 		super();
 	}
 
-	public Product(int productId, String productName, double ratePerUnit) throws Exception {
+	public Product(int productId, String productName, double ratePerUnit) throws RangeCheckException {
 		super();
 		this.productId = productId;
 		this.productName = productName;

@@ -28,6 +28,7 @@ public class CrudRepositoryImpl implements CrudRepository {
 			String sql = "insert into product_2024 values(?,?,?)";
 			
 			int rowAdded = 0;
+			
 			try(PreparedStatement pstmt = con.prepareStatement(sql)) {
 				
 				pstmt.setInt(1, object.getProductId());
