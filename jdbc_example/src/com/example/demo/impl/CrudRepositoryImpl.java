@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.sql.*;
 import java.util.List;
 
+import com.example.demo.exceptions.RangeCheckException;
 import com.example.demo.ifaces.CrudRepository;
 import com.example.demo.model.Product;
+import com.mysql.cj.xdevapi.Result;
+
 import java.io.*;
 public class CrudRepositoryImpl implements CrudRepository {
 	
@@ -48,9 +51,33 @@ public class CrudRepositoryImpl implements CrudRepository {
 	@Override
 	public List<Product> findAll() {
 		
+		String sql = "select * from  product_2024 ";
 		
+		List<Product> productList  = new ArrayList<>();
 		
-		return null;
+		try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+		
+				int productId = rs.getInt("product_id");
+				String productName = rs.getString("product_name");
+				double ratePerUnit =rs.getDouble("rate_per_unit");
+				
+				Product obj  = new Product(productId, productName, ratePerUnit);
+				
+				productList.add(obj);
+
+			}
+					
+		} catch (SQLException |RangeCheckException e) {
+			
+			e.printStackTrace();
+		}
+
+		
+		return productList;
 	}
 
 	@Override

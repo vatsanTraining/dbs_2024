@@ -15,6 +15,7 @@ public class Application {
 
 		
 		
+		
 		try(Connection con = ConnectionUtils.getMySqlConnection();
 				) {
 			
@@ -23,17 +24,21 @@ public class Application {
 			
 			ProductService service = new ProductService(repo);
 			
-			boolean result =service.add(new Product(101, "dell laptop", 74000));
+			boolean result =service.add(new Product(405, "smartwatch", 46000));
 			
-			System.out.println("is Row Added:=>"+ result);
+			//System.out.println("is Row Added:=>"+ result);
 			
 			
+			service.findAll().forEach(System.out::println);
+
 			
-		} catch (IOException | RangeCheckException |SQLException e) {
+			
+		} catch (IOException |RangeCheckException | SQLException e) {
 			e.printStackTrace();
 		}
 		
 		
+
 	
 	}
 
