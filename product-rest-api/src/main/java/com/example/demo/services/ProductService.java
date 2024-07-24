@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -49,6 +50,30 @@ public class ProductService {
 		return this.repo.findById(key).orElseThrow(
 				 () -> new RuntimeException("Product with Given Id Not Found"));
 	}
+	
+	
+	public Optional<Product> findByProductName(String  name) {
+		
+		Optional<Product> response = Optional.empty();
+		
+		Product obj = this.repo.findByProductName(name);
+		
+		response = Optional.of(obj);
+		
+		
+		return response;
+		
+				
+	}
+	
+	
+	public List<Product> findByRpuGrtThan(double  value) {
+		
+		return this.repo.getByRpuGrtThan(value);
+	}
+	
+	
+
 	public Product update(Product obj) {
 		
 		return this.repo.save(obj);
@@ -64,9 +89,11 @@ public class ProductService {
 			isDeleted = true;
 		}
 		
+		
 		return isDeleted;
 		
 	}
+	
 	
 	
 	

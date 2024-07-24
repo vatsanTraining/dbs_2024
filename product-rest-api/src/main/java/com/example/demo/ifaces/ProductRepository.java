@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.demo.entity.Product;
 
-import jakarta.websocket.server.PathParam;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 

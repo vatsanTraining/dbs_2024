@@ -43,6 +43,20 @@ public class ProductController {
 		return this.service.findById(key);
 	}
 	
+	@GetMapping("/srch/name/{name}")
+	public Product findById(@PathVariable("name") String name){
+		
+		return this.service.findByProductName(name).orElseThrow(() -> new RuntimeException("Name Not Found"));
+		
+	}
+	
+	@GetMapping("/srch/rpu/{rpu}")
+	public List<Product> findByRpuGrtThan(@PathVariable("rpu") double rpu){
+		
+		return this.service.findByRpuGrtThan(rpu);
+						
+	}
+	
 	@PostMapping
 	public ResponseEntity<Product> save(@RequestBody Product entity){
 		
