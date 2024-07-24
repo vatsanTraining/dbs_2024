@@ -8,6 +8,7 @@ public class ErrorMessage {
 	private String errorCode;
 	private String errorMessage;
 	private LocalDateTime dateTime;
+	
 	public ErrorMessage() {
 		super();
 		// TODO Auto-generated constructor stub
