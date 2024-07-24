@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Product;
 import com.example.demo.ifaces.ProductRepository;
-
+import java.lang.reflect.*;
 @Service
 public class ProductService {
 
@@ -20,6 +20,15 @@ public class ProductService {
 	
 	public ProductService(ProductRepository repo) {
 		super();
+		
+		System.out.println(repo.getClass().getName());
+		
+		Method[] methods =repo.getClass().getMethods();
+		
+		for(Method eachMethod : methods) {
+	      
+			System.out.println(eachMethod.getName());
+		}
 		this.repo = repo;
 	}
 	

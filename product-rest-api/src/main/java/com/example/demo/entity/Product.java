@@ -25,6 +25,15 @@ public class Product {
 		super();
 	}
 
+	
+	public Product(int productId, String productName, double ratePerUnit) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.ratePerUnit = ratePerUnit;
+	}
+
+
 	public int getProductId() {
 		return productId;
 	}
