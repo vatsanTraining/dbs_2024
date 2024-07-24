@@ -13,7 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	//DSL findByPropName => if prop bookName it will findByBookName
 	
-	
 	public Product findByProductName(String name);
 	
 	//JPQL Java Persistence Query Language
@@ -25,3 +24,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	public List<Product> getByRpuGrtThan(@Param("srchValue") double rpu);
 	
 }
+
+
+
