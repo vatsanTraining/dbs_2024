@@ -12,8 +12,8 @@ public class UsePrintNames implements Runnable {
 		this.str1 = str1;
 		this.str2 = str2;
 		
-		Thread thread = new Thread(this);
-		thread.start();
+//		Thread thread = new Thread(this);
+//		thread.start();
 	}
 
 
