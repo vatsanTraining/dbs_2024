@@ -3,6 +3,7 @@ package com.training.proxy;
 public class ProxyInterNetAccess implements InterNetAccess {
 
 	InterNetAccessImpl real;
+	
 	private int empGrade;
 	
 	
