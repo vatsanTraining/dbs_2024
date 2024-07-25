@@ -24,7 +24,7 @@ public class ClientController {
 	@GetMapping
 	public ProductDTO[] getAllProducts(){
 		
-		return this.template.getForObject("http://localhost:5550/api/v1/products", ProductDTO[].class);
+		return this.template.getForObject("http://PRODUCT-SERVICE-RDBMS/api/v1/products", ProductDTO[].class);
 		
 	}
 }
