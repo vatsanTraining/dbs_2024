@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
+import org.hibernate.annotations.Comment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CibilScoreDTO {
 
     private long id;

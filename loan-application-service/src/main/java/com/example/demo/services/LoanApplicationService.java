@@ -24,10 +24,12 @@ private RestTemplate template;
 	
 	public LoanApplication save(LoanApplication entity) {
 		
-		String url = "http://CIBIL-SCORE-SERVICE/api/v1/scores/"+entity.getPanNumber();
+		String url = "http://CIBIL-SCORE-SERVICE/api/v1/scores/srch/pan/"+entity.getPanNumber();
+		
+		
 		CibilScoreDTO dto = this.template.getForObject(url, CibilScoreDTO.class);
 		
-		System.out.println(dto.getScore());
+		
 		if(dto.getScore()>600) {
 		    entity.setLoanStatus("APPROVED");
 		} else {
