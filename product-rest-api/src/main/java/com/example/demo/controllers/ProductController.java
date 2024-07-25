@@ -33,12 +33,21 @@ public class ProductController {
 	
 	
 	@GetMapping(produces = "application/json")
+	/**
+	 * 
+	 * @return List of Products represented as JSON
+	 */
 	public List<Product> findAll(){
 		
 		return this.service.findAll();
 	}
 	
 	@GetMapping("/{id}")
+	/**
+	 * 
+	 * @param key is the primary key on which you want search
+	 * @return
+	 */
 	public Product findById(@PathVariable("id") int key){
 		
 		return this.service.findById(key);

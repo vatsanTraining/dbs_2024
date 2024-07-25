@@ -1,0 +1,6 @@
+com.example.demo
+com.example.demo.controllers
+com.example.demo.entity
+com.example.demo.ifaces
+com.example.demo.services
+com.example.demo.utils
