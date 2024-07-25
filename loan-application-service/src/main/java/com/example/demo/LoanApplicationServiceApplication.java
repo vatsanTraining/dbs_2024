@@ -26,24 +26,5 @@ public class LoanApplicationServiceApplication {
 		return new RestTemplate();
 	}
 	
-	@Bean
-	CommandLineRunner runner() {
-		
-		return new CommandLineRunner() {
-			
-			@Autowired
-			LoanApplicationService service;
-			
-			@Override
-			public void run(String... args) throws Exception {
-				
-				service.save(new LoanApplication(1024,"Anand", "AA104", 500000, "PENDING"));
-				service.save(new LoanApplication(1025,"Vikas", "AA103", 500000, "PENDING"));
-				
-				
 
-
-			}
-		};
-	}
 }

@@ -1,9 +1,7 @@
 package com.example.demo.model;
 
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
-@Component
 public class CibilScoreDTO {
 
     private long id;
@@ -16,7 +14,6 @@ public class CibilScoreDTO {
 
 	public CibilScoreDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getId() {

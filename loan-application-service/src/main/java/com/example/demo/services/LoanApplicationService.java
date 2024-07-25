@@ -35,7 +35,6 @@ private RestTemplate template;
 		} else {
 			entity.setLoanStatus("REJECTED");
 		}
-		System.out.println(entity.getLoanStatus());
 		
 		return this.repo.save(entity);
 	}

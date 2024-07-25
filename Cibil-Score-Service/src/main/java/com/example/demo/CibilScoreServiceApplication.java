@@ -20,20 +20,5 @@ public class CibilScoreServiceApplication {
 
 	
 	
-	@Bean
-	CommandLineRunner runner() {
-		
-		return new CommandLineRunner() {
-			
-			@Autowired
-			CibilScoreRepo repo;
-			
-			@Override
-			public void run(String... args) throws Exception {
-				
-				repo.save(new CibilScore(105, "Anand", "AA105",700 ));
-				repo.save(new CibilScore(105, "Vikas", "AA106",300 ));
-			}
-		};
-	}
+	
 }
