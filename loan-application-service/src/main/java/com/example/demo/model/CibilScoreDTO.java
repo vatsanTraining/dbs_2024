@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import org.springframework.stereotype.Component;
 
 public class CibilScoreDTO {
 
