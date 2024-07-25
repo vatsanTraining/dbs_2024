@@ -3,8 +3,8 @@ package com.example.demo.model;
 
 public class ProductDTO {
 
-private int productId;
-	
+
+	private int productId;
 	
 	private String productName;
 	
